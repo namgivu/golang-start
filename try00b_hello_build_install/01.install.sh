@@ -4,17 +4,22 @@
 s=$BASH_SOURCE ; s=$(dirname "$s") ; s=$(cd "$s" && pwd) ; export SCRIPT_HOME=$s
 
 #region do install
-curDir=`pwd`
+NAME=$(basename "$SCRIPT_HOME") #TODO How to build with this name as the output?
 
-  NAME='try00b'
-  cd $SCRIPT_HOME
-  go install -o $NAME main.go
+cd $SCRIPT_HOME
 
-cd $curDir
+GOPATH_SRC="$GOPATH/src/"
+PACKAGE_PATH="${SCRIPT_HOME/#$GOPATH_SRC/}" #replace substring ref. https://stackoverflow.com/a/24347937/248616
+
+go install $PACKAGE_PATH #go install syntax ref. https://golang.org/doc/code.html#Command
 #endregion do install
 
+#output
 buildOutput="$GOPATH/bin/$NAME"
 echo "
 Built output at
-$buildOutput #TODO We do NOT see the output here, why?
+$buildOutput
+
+You can run above full path, or just call
+$NAME
 "
