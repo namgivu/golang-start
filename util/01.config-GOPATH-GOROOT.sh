@@ -5,7 +5,7 @@
 #more friendly guide  ref. https://github.com/alco/gostart#motivation
 
 GOPATH="$HOME/gows" #gows ie. go workspace
-GOROOT=`which go` #golang installed in ubuntu, just use that path
+g=$(readlink -f `which go`) ; g=$(dirname "$g") ; GOROOT=$g #golang installed in ubuntu, just use that path
 
 BASHRC="$HOME/.bashrc"
 
@@ -21,6 +21,7 @@ cat >> $BASHRC <<EOL
 
 #config GOROOT for golang
 export GOROOT="$GOROOT"
+unset GOROOT #unset it to dodge the error ref. https://stackoverflow.com/a/21510972/248616 #TODO How to set it properly?
 
 #config GOPATH for golang
 export GOPATH="$GOPATH"
