@@ -1,3 +1,5 @@
+##region github generated ignore
+
 # Binaries for programs and plugins
 *.exe
 *.dll
@@ -12,3 +14,11 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
+##endregion github generated ignore
+
+
+#region our project gitignore
+.idea/workspace.xml
+.idea/workspace.xml2
+#endregion our project gitignore
