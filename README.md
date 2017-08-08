@@ -1,6 +1,27 @@
 What is so unique in Golang?
----
+===
 
+In brief
+---
+  
+- interface review
+  - interface's implementation could appear in any package without pre-arrangement
+  - method = a function injected into a specific type
+  - `NO` interface = {method01, method02, ...}
+  - `YES` interface = {function prototype 01, function prototype 02, ...}
+
+  - golang object = { fields, methods}
+    + fields  defined by 'struct'
+    + methods defined by 'interface'
+    + interface implemented by 'function's type-injection'
+    
+- concurrent review `TODO`
+
+- live import feature i.e. importing from package available online 
+    
+
+Full details
+---
 - 'for' loop can turn into 'while' loop
   https://tour.golang.org/flowcontrol/3
   
@@ -151,7 +172,7 @@ What is so unique in Golang?
   func (T) Read(b []byte) (n int, err error)
   ```
   
-- interface review
+- `new` interface review
   - interface's implementation could appear in any package without pre-arrangement
   - method = a function injected into a specific type
   - `NO` interface = {method01, method02, ...}
@@ -162,3 +183,37 @@ What is so unique in Golang?
     + methods defined by 'interface'
     + interface implemented by 'function's type-injection'
     
+- `new` go routine 
+  https://tour.golang.org/concurrency/1
+  ```
+  go someMethod()
+  ```
+  
+- `new` go channel
+  https://tour.golang.org/concurrency/2
+
+  create
+  ch := make(chan int)
+  
+  usage via operator <-
+  - add to channel
+    ch <- v
+  - pop from channel  
+    v := <- ch
+
+- `new` select ... case ...
+  https://tour.golang.org/concurrency/5
+  > A 'select' blocks until one of its cases can run
+  > if multiple cases are ready, it chooses one at random .
+  
+- mutual exclusion 'sync.Mutex'
+  https://tour.golang.org/concurrency/9
+  ```
+	m sync.Mutex
+	m.Lock()
+	#do something
+	m.Unlock()
+  ```
+  
+- `TODO` master a simple web crawler
+  https://tour.golang.org/concurrency/10
