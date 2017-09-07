@@ -1,3 +1,7 @@
+Note for this project when `git clone`
+===
+Please put this folder under $GOPATH/src/github.com/$YOUR_GITHUB_USER/
+
 What is so unique in Golang?
 ===
 
