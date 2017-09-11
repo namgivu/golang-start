@@ -217,3 +217,6 @@ Full details
   
 - `TODO` master a simple web crawler
   https://tour.golang.org/concurrency/10
+  
+- 'map' type is not a thread-safe type
+  http://wh3rd.net/practical-go/#(6)
