@@ -1,6 +1,8 @@
 package main
 
-//https://www.hackerrank.com/challenges/YOUR-TOPIC
+/*
+https://www.hackerrank.com/challenges/YOUR-TOPIC
+*/
 
 import (
 	"fmt"
