@@ -7,18 +7,20 @@ import (
 	"github.com/namgivu/golang-start/hackerrank/util"
 )
 
+//const INPUT_FILE 	= "input.txt"
+const INPUT_FILE	= "/home/namgvu/gows/src/github.com/namgivu/golang-start/hackerrank/chYYmmDD_hhmm_TEMPLATE/input.txt" //TODO how to use relative path here
+const OUTPUT_FILE	= "/home/namgvu/gows/src/github.com/namgivu/golang-start/hackerrank/chYYmmDD_hhmm_TEMPLATE/output.txt" //TODO how to use relative path here
 
-//turn this on when debug to redirect stdin/stdout to file in Gogland ref. TODO https://stackoverflow.com/q/46399395/248616
 
 func main() {
 
 	/*region redirect stdio*/
 	var REDIRECT_STDIO_2_FILE bool
 	REDIRECT_STDIO_2_FILE = false
-	REDIRECT_STDIO_2_FILE = true
+	REDIRECT_STDIO_2_FILE = true //turn this on to redirect stdin/stdout to file ref. TODO https://stackoverflow.com/q/46399395/248616
 
 	if REDIRECT_STDIO_2_FILE {
-		inFile, outFile := util.RedirectStdio2File()
+		inFile, outFile := util.RedirectStdio2File(INPUT_FILE, OUTPUT_FILE)
 		defer inFile.Close()
 		defer outFile.Close()
 	}

@@ -5,12 +5,7 @@ import (
 	"fmt"
 )
 
-//const INPUT_FILE 	= "input.txt"
-const INPUT_FILE	= "/home/namgvu/gows/src/github.com/namgivu/golang-start/hackerrank/chYYmmDD_hhmm_TEMPLATE/input.txt" //TODO how to use relative path here
-const OUTPUT_FILE	= "/home/namgvu/gows/src/github.com/namgivu/golang-start/hackerrank/chYYmmDD_hhmm_TEMPLATE/output.txt" //TODO how to use relative path here
-
-
-func RedirectStdio2File() (inFile *os.File, outFile *os.File) {
+func RedirectStdio2File(INPUT_FILE, OUTPUT_FILE string) (inFile, outFile *os.File) {
 
 	/*region redirect stdin to file*/
 
