@@ -31,12 +31,7 @@ func main() {
 	//read array of N integer on line 02
 	a := util.ReadArray(N)
 
-
 	fmt.Println(N)
 	fmt.Println(a)
 
-
-	if REDIRECT_STDIO_2_FILE {
-		//TODO ensure output buffer is flushed
-	}
 }

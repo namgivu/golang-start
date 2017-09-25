@@ -6,7 +6,7 @@ import (
 )
 
 //const INPUT_FILE 	= "input.txt"
-const INPUT_FILE 	= "/home/namgvu/gows/src/github.com/namgivu/golang-start/hackerrank/TODO_chyymmdd_hhmm_TEMPLATE/input.txt"
+const INPUT_FILE 	= "/home/namgvu/gows/src/github.com/namgivu/golang-start/hackerrank/TODO_chyymmdd_hhmm_TEMPLATE/input.txt" //TODO how to use relative path here
 const OUTPUT_FILE	= "output.txt"
 
 
