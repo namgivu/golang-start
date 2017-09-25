@@ -44,12 +44,9 @@ func RedirectStdio2File(INPUT_FILE, OUTPUT_FILE string) (inFile, outFile *os.Fil
 
 func ReadArray(N int) []int {
 	a := make([]int, N)
-	for i:=0; i<N; i++  {
-		var v int
-		fmt.Scanf("%d", &v)
-		a[i] = v
+	for i:=0; i<N; i++ {
+		fmt.Scanf("%d", &a[i])
 	}
-
 	return a
 }
 
