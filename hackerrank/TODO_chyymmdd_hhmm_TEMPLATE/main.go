@@ -18,15 +18,22 @@ func main() {
 	REDIRECT_STDIO_2_FILE = true
 
 	if REDIRECT_STDIO_2_FILE {
-		util.RedirectStdio2File()
+		inFile, outFile := util.RedirectStdio2File()
+		defer inFile.Close()
+		defer outFile.Close()
 	}
 	/*endregion redirect stdio*/
 
-	//TODO read N int on line 01
-	//TODO read array of N integer on line 02
-	//fmt.Scanf("%v\n", &N)
+	//read N int on line 01
+	var N int
+	fmt.Scanf("%d", &N)
 
-	fmt.Println(res)
+	//read array of N integer on line 02
+	a := util.ReadArray(N)
+
+
+	fmt.Println(N)
+	fmt.Println(a)
 
 
 	if REDIRECT_STDIO_2_FILE {
