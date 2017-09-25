@@ -3,7 +3,9 @@ package util
 import (
 	"os"
 	"fmt"
+	"strings"
 )
+
 
 func RedirectStdio2File(INPUT_FILE, OUTPUT_FILE string) (inFile, outFile *os.File) {
 
@@ -49,4 +51,11 @@ func ReadArray(N int) []int {
 	}
 
 	return a
+}
+
+
+func StrFormat(format string, args ...string) string {
+	/*ref. https://stackoverflow.com/a/40811635/248616*/
+	r := strings.NewReplacer(args...)
+	return r.Replace(format)
 }
