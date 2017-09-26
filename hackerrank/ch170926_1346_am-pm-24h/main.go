@@ -44,8 +44,14 @@ func main() {
 	if e!=nil { panic(e) }
 
 	ampm := t[len(t)-2:]
-	if ampm == "PM" {
+	if ampm == "PM" && h==12 {
+		h = h //do nothing
+	} else if ampm == "PM" {
 		h += 12
+	} else if ampm == "AM" && h==12 {
+		h = 0
+	} else if ampm == "AM" {
+		h = h //do nothing
 	}
 
 	mm := t[3:5]
