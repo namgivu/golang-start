@@ -35,6 +35,8 @@ func main() {
 
 	/*endregion io setting*/
 
+	/*region solution*/
+
 	//read N int on line 01
 	var N int
 	fmt.Scanf("%d", &N)
@@ -44,5 +46,7 @@ func main() {
 
 	fmt.Println(N)
 	fmt.Println(a)
+
+	/*endregion solution*/
 
 }
