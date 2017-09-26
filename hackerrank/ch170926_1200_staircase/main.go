@@ -47,7 +47,7 @@ func main() {
 			s += " "
 		}
 		for j:=1; j<=stars; j++ {
-			s += "*"
+			s += "#"
 		}
 		r += s+"\n"
 	}
