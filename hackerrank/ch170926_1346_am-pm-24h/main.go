@@ -36,26 +36,30 @@ func main() {
 
 	/*endregion io setting*/
 
-	var t string
-	fmt.Scanf("%s", &t)
+	var N int
+	fmt.Scanf("%d", &N)
 
-	hh := t[0:2]
-	h,e := strconv.Atoi(hh)
-	if e!=nil { panic(e) }
+	for i:=0;i<N;i++ {
+		var t string
+		fmt.Scanf("%s", &t)
 
-	ampm := t[len(t)-2:]
-	if ampm == "PM" && h==12 {
-		h = h //do nothing
-	} else if ampm == "PM" {
-		h += 12
-	} else if ampm == "AM" && h==12 {
-		h = 0
-	} else if ampm == "AM" {
-		h = h //do nothing
+		/*region handle t*/
+		hh := t[0:2]
+		h,e := strconv.Atoi(hh)
+		if e!=nil { panic(e) }
+
+		ampm := t[len(t)-2:]
+		if ampm == "PM" && h==12 {
+			h = 0 //do nothing
+		} else if ampm == "PM" {
+			h += 12
+		}
+
+		mm := t[3:5]
+		ss := t[6:8]
+		r := fmt.Sprintf("%02d:%02s:%02s", h, mm, ss)
+		fmt.Println(r)
+		/*endregion handle t*/
+
 	}
-
-	mm := t[3:5]
-	ss := t[6:8]
-	r := fmt.Sprintf("%02d:%02s:%02s", h, mm, ss)
-	fmt.Println(r)
 }
