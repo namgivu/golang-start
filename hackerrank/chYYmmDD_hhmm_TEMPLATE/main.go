@@ -43,7 +43,10 @@ func main() {
 	fmt.Scanf("%d", &N)
 
 	//read array of N integer on line 02
-	a := util.ReadArray(N)
+	a := make([]int, N)
+	for i:=0; i<N; i++ {
+		fmt.Scanf("%d", &a[i])
+	}
 
 	fmt.Println(N)
 	fmt.Println(a)
