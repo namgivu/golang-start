@@ -53,7 +53,8 @@ func countTheMiddle(y,x int) int {
 /*endregion util*/
 
 
-const CHALLENGE_NAME = "ch170926_1800_prime-divisor-multiple"
+const CHALLENGE_NAME	= "ch170926_1800_prime-divisor-multiple"
+const ARCHIVE_PATH		= "archive"
 
 func main() {
 
@@ -61,10 +62,10 @@ func main() {
 
 	var REDIRECT_STDIO_2_FILE bool
 	REDIRECT_STDIO_2_FILE = false
-	REDIRECT_STDIO_2_FILE = true //turn this on to redirect stdin/stdout to file ref. TODO https://stackoverflow.com/q/46399395/248616
+	REDIRECT_STDIO_2_FILE = true //turn this on to redirect stdin/stdout to file ref. https://stackoverflow.com/q/46399395/248616
 
 	/*region file path config*/
-	var IO_HOME = util.StrFormat("{HACKERRANK_HOME}/{CHALLENGE_NAME}", "{HACKERRANK_HOME}", util.HACKERRANK_HOME, "{CHALLENGE_NAME}", CHALLENGE_NAME)
+	var IO_HOME = util.StrFormat("{HACKERRANK_HOME}/{ARCHIVE_PATH}/{CHALLENGE_NAME}", "{HACKERRANK_HOME}", util.HACKERRANK_HOME, "{ARCHIVE_PATH}", ARCHIVE_PATH, "{CHALLENGE_NAME}", CHALLENGE_NAME)
 	var INPUT_FILE = util.StrFormat("{IO_HOME}/input.txt", "{IO_HOME}", IO_HOME)
 	var OUTPUT_FILE = util.StrFormat("{IO_HOME}/output.txt", "{IO_HOME}", IO_HOME)
 	/*endregion file path config*/

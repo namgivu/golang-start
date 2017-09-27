@@ -10,6 +10,7 @@ import (
 )
 
 const CHALLENGE_NAME	= "chYYmmDD_hhmm_TEMPLATE"
+const ARCHIVE_PATH		= "archive"
 
 func main() {
 
@@ -17,7 +18,7 @@ func main() {
 
 		var REDIRECT_STDIO_2_FILE bool
 		REDIRECT_STDIO_2_FILE = false
-		REDIRECT_STDIO_2_FILE = true //turn this on to redirect stdin/stdout to file ref. TODO https://stackoverflow.com/q/46399395/248616
+		REDIRECT_STDIO_2_FILE = true //turn this on to redirect stdin/stdout to file ref. https://stackoverflow.com/q/46399395/248616
 
 		/*region file path config*/
 		var IO_HOME					= util.StrFormat("{HACKERRANK_HOME}/{CHALLENGE_NAME}", "{HACKERRANK_HOME}", util.HACKERRANK_HOME, "{CHALLENGE_NAME}", CHALLENGE_NAME)
