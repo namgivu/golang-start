@@ -14,8 +14,7 @@ import (
 )
 
 const CHALLENGE_NAME	= "ch170927_1411_birthday-chocolate"
-//const ARCHIVE_PATH		= "archive"
-const ARCHIVE_PATH		= ""
+const ARCHIVE_PATH		= "archive"
 
 func main() {
 
