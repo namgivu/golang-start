@@ -16,13 +16,8 @@ func getMinCM(x,y int) int {
 	return x*y / getMaxCD(x,y)
 }
 
-func getMaxCD(_x,_y int) int {
+func getMaxCD(x,y int) int {
 	/*minimum common multiple*/
-
-	var x,y int
-
-	//ensure x >= y
-	if x,y = _x,_y ; y>x { x,y = _y,_x }
 
 	//ensure x,y valid
 	if x==0 || y==0 { panic("Invalid value as zero for divisor") }
