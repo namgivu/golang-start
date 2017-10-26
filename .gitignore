@@ -20,4 +20,5 @@
 
 #region our project gitignore
 .idea/workspace.xml
+.idea/misc.xml
 #endregion our project gitignore
