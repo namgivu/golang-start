@@ -13,9 +13,8 @@ type MyJsonArray struct {
 	Result []MyJsonItem
 }
 
-var httpClient = &http.Client{Timeout: 10 * time.Second}
-
 func jsonFromGETRequest(url string) (output interface{}, err error) {
+	var httpClient = &http.Client{Timeout: 10 * time.Second}
 	resp, err := httpClient.Get(url)
 	if err != nil {
 		return nil, err
