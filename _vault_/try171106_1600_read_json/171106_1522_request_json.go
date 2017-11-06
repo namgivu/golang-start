@@ -15,21 +15,27 @@ type MyJsonArray struct {
 
 var httpClient = &http.Client{Timeout: 10 * time.Second}
 
-func getJson(url string) (output interface{}, err error) {
+func jsonFromGETRequest(url string) (output interface{}, err error) {
 	resp, err := httpClient.Get(url)
 	if err != nil {
 		return nil, err
 	}
-	defer resp.Body.Close()
+	return jsonFromHttpResponse(resp)
+}
 
-	//output json as plain text ref. https://stackoverflow.com/a/38807963/248616
-	respBodyBytes, err := ioutil.ReadAll(resp.Body)
-	fmt.Printf("Response body as plain text %s\n", respBodyBytes)
+func jsonFromHttpResponse(resp *http.Response) (output interface{}, err error) {
+	defer resp.Body.Close()
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+
+	fmt.Printf("Response body as plain text %s\n", bodyBytes) //output json as plain text ref. https://stackoverflow.com/a/38807963/248616
 
 	output = MyJsonArray{}
-	err = json.Unmarshal(respBodyBytes, &output)
-	//err = json.NewDecoder(resp.Body).Decode(structOutput)
+	err = json.Unmarshal(bodyBytes, &output)
+	if err != nil {
+		return nil, err
+	}
 	return output, err
+	//err = json.NewDecoder(resp.Body).Decode(structOutput)
 }
 
 func main() {
@@ -44,7 +50,7 @@ func main() {
 	 */
 	url := "http://release1.sgdc:3000/svc"
 
-	d, err := getJson(url)
+	d, err := jsonFromGETRequest(url)
 	if err != nil {
 		panic (fmt.Sprintf("Error occured\nDetails: %q", err))
 	}
