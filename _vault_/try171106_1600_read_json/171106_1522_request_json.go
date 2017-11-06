@@ -15,10 +15,10 @@ type MyJsonArray struct {
 
 var httpClient = &http.Client{Timeout: 10 * time.Second}
 
-func getJson(url string, structOutput interface{}) (err error) {
+func getJson(url string) (output interface{}, err error) {
 	resp, err := httpClient.Get(url)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -26,13 +26,13 @@ func getJson(url string, structOutput interface{}) (err error) {
 	respBodyBytes, err := ioutil.ReadAll(resp.Body)
 	fmt.Printf("Response body as plain text %s\n", respBodyBytes)
 
-	err = json.Unmarshal(respBodyBytes, structOutput)
+	output = MyJsonArray{}
+	err = json.Unmarshal(respBodyBytes, &output)
 	//err = json.NewDecoder(resp.Body).Decode(structOutput)
-	return err
+	return output, err
 }
 
 func main() {
-	d := MyJsonArray{}
 
 	/*
 	 * the url result json in the form of
@@ -44,6 +44,9 @@ func main() {
 	 */
 	url := "http://release1.sgdc:3000/svc"
 
-	getJson(url, &d)
+	d, err := getJson(url)
+	if err != nil {
+		panic (fmt.Sprintf("Error occured\nDetails: %q", err))
+	}
 	fmt.Printf("Response body as go struct %q\n", d)
 }
