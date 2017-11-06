@@ -16,7 +16,7 @@ func main() {
 		panic("Cannot read file")
 	}
 
-	//output json as plain text
+	//output json as plain text ref. https://stackoverflow.com/a/38811245/248616
 	s := string(readBytes)
 	fmt.Printf("As plain text %s\n", s)
 	fmt.Printf("As plain text %s\n", readBytes)
