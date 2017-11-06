@@ -34,7 +34,6 @@ func jsonFromHttpResponse(resp *http.Response) (output interface{}, err error) {
 		return nil, err
 	}
 	return output, err
-	//err = json.NewDecoder(resp.Body).Decode(structOutput)
 }
 
 func main() {
