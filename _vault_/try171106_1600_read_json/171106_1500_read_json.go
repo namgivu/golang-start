@@ -7,15 +7,10 @@ import (
 	"bytes"
 )
 
-/*
- * ref. https://stackoverflow.com/a/25466050/248616
- */
-
-type YourJsonItem map[string]string
-type YourJsonArray []YourJsonItem
+type YourJson00 map[string]string
 
 func main() {
-	jsonFile := "_vault_/try171106_1600_read_json/171106_1511_json_request.json"
+	jsonFile := "_vault_/try171106_1600_read_json/171106_1500_read_json.json"
 	readBytes, err := ioutil.ReadFile(jsonFile)
 	if err != nil {
 		panic("Cannot read file")
@@ -27,12 +22,12 @@ func main() {
 	fmt.Printf("As plain text %s\n", readBytes)
 
 	//read json as struct 01
-	d1 := YourJsonArray{}
+	d1 := YourJson00{}
 	err = json.Unmarshal(readBytes, &d1)
 	fmt.Printf("As go struct %q\n", d1)
 
 	//read json as struct 02
-	d2 := YourJsonArray{}
+	d2 := YourJson00{}
 	dec := json.NewDecoder(bytes.NewReader(readBytes))
 	dec.Decode(&d2)
 	fmt.Printf("As go struct %q\n", d2)
