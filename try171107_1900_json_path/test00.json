@@ -1,0 +1,12 @@
+{
+  "result": [
+    {
+      "DiscoveryName": "abb",
+      "Poc": "ccc@dee.fff"
+    },
+    {
+      "DiscoveryName": "xyy",
+      "Poc": "zzz@tuu.vvv"
+    }
+  ]
+}

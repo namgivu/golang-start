@@ -1,0 +1,22 @@
+{
+  "Items":
+  [
+    {
+      "title": "A Midsummer Night's Dream",
+      "tags":[
+        "comedy",
+        "shakespeare",
+        "play"
+      ]
+    },
+
+    {
+      "title": "A Tale of Two Cities",
+      "tags":[
+        "french",
+        "revolution",
+        "london"
+      ]
+    }
+  ]
+}
