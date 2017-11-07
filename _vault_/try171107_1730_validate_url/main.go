@@ -14,6 +14,7 @@ func main() {
 func ValidateHostPort(host string, port string) (isValid bool) {
 	/*
 	 * ref. https://golang.org/pkg/net/
+	 * ref. https://github.com/akutz/gotil/blob/master/gotil.go#L284
 	 * address = host:port | host | http://domain.com | etc.
 	 */
 	 address := fmt.Sprintf("%s:%s", host, port)
